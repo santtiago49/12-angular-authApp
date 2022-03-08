@@ -4,3 +4,8 @@ export interface AuthResponse {
     name ?: string;
     token?: string;
 }
+
+export interface Usuario {
+    name : string,
+    uid  : string
+}
