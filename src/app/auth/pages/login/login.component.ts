@@ -23,21 +23,18 @@ export class LoginComponent {
 
   login(){
 
-    this.authService.validarToken()
-      .subscribe(console.log)
+    console.log(this.miFormulario.value);
+    const { email, password } = this.miFormulario.value;
 
-    // console.log(this.miFormulario.value);
-    // const { email, password } = this.miFormulario.value;
-
-    // this.authService.login( email, password )
-    //   .subscribe(resp => {
-    //     console.log(resp);
-    //     if( resp === true){
-    //       this.router.navigateByUrl('/dashboard');
-    //     } else {
-    //       Swal.fire(resp, '', 'error')
-    //     }
-    //   })
+    this.authService.login( email, password )
+      .subscribe(resp => {
+        console.log(resp);
+        if( resp === true){
+          this.router.navigateByUrl('/dashboard');
+        } else {
+          Swal.fire(resp, '', 'error')
+        }
+      })
       
 
   }
