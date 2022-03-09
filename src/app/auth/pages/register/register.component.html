@@ -10,8 +10,8 @@
     <div class="wrap-input100 m-b-23">
         <span class="label-input100">Nombre</span>
         <input class="input100"
-               type="nombre" 
-               formControlName="nombre" 
+               type="name" 
+               formControlName="name" 
                placeholder="Ingrese su nombre">
         <span class="focus-input100"></span>
     </div>
@@ -40,7 +40,8 @@
         <div class="wrap-login100-form-btn">
             <div class="login100-form-bgbtn"></div>
             <button class="login100-form-btn"
-                    type="submit">
+                    type="submit"
+                    [disabled]="miFormulario.invalid">
                 Registrarse
             </button>
         </div>
