@@ -4,6 +4,7 @@ import { catchError, map, of, tap, Observable } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
 import { AuthResponse, Usuario } from '../interfaces/interfaces';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -61,6 +62,11 @@ export class AuthService {
           return resp.ok}),
           catchError( err => of(false))
         )
-
   }
+
+  logout(){
+    localStorage.removeItem('token');
+  }
+
+
 }
