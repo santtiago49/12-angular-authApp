@@ -29,10 +29,6 @@ export class AuthService {
         tap( resp => {
           if(resp.ok){
             localStorage.setItem('token', resp.token!)
-            this._usuario = {
-              name: resp.name!,
-              uid: resp.uid!
-            }
           }
         }),
         map( valid => valid.ok ),
@@ -51,10 +47,6 @@ export class AuthService {
         tap( resp => {
           if(resp.ok){
             localStorage.setItem('token', resp.token!)
-            this._usuario = {
-              name: resp.name!,
-              uid: resp.uid!
-            }
           }
         }),
         map( valid => valid.ok),
@@ -76,7 +68,8 @@ export class AuthService {
             localStorage.setItem('token', resp.token!)
             this._usuario = {
               name: resp.name!,
-              uid: resp.uid!
+              uid: resp.uid!,
+              email: resp.email!
             }
           }
           return resp.ok}),
